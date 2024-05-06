@@ -1,5 +1,7 @@
 #![recursion_limit = "512"]
 
+use std::cell::RefCell;
+use std::rc::Rc;
 use wasm_bindgen::prelude::*;
 use yew::functional::*;
 use yew::prelude::*;
@@ -16,6 +18,13 @@ use components::chat::Chat;
 #[cfg(feature = "wee_alloc")]
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
+
+pub type User = Rc<UserInner>;
+
+#[derive(Debug, PartialEq)]
+pub struct UserInner {
+    pub username: RefCell<String>,
+}
 
 #[derive(Debug, Clone, Copy, PartialEq, Routable)]
 pub enum Route {
@@ -38,12 +47,19 @@ fn switch(selected_route: &Route) -> Html {
 
 #[function_component(Main)]
 fn main() -> Html {
+    let ctx = use_state(|| {
+        Rc::new(UserInner {
+            username: RefCell::new("initial".into()),
+        })
+    });
     html! {
+        <ContextProvider<User> context={(*ctx).clone()}>
         <BrowserRouter>
             <div class="flex w-screen h-screen">
                 <Switch<Route> render={Switch::render(switch)}/>
             </div>
         </BrowserRouter>
+        </ContextProvider<User>>
     }
 }
 
