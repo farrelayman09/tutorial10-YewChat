@@ -11,6 +11,7 @@ Advanced Programming B <br>
 
 #### Entering username <br>
 <img src= "assets/images/Screen Shot 2024-05-08 at 13.37.57.png" width="600px"> <br>
+#### Using the chatroom <br>
 
 ### Experiment 3.2: Add some creativities to the webclient
 <img src= "assets/images/Screen Shot 2024-05-08 at 14.06.27.png" width="600px"> <br>
