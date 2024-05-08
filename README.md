@@ -1,3 +1,19 @@
+# Tutorial 10 YewChat
+Farrel Ayman Abisatyo  <br>
+2206828916 <br>
+Advanced Programming B <br>
+
+## Reflection
+
+### Experiment 3.1: Original code
+
+<img src= "assets/images/Screen Shot 2024-05-08 at 13.38.15.png" width="600px"> <br>
+
+#### Entering username <br>
+<img src= "assets/images/Screen Shot 2024-05-08 at 13.37.57.png" width="600px"> <br>
+
+#### Using YewChat
+
 # YewChat 💬
 
 > Source code for [Let’s Build a Websocket Chat Project With Rust and Yew 0.19 🦀](https://fsjohnny.medium.com/lets-build-a-websockets-project-with-rust-and-yew-0-19-60720367399f)
